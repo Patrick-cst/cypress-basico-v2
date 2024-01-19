@@ -12,3 +12,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with: 
           cypress-version: 9.5.1
+      - name: Install Cypress
+        run: | 
+          npm install cypress@9.5.1
