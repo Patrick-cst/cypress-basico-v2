@@ -10,5 +10,8 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
+      - name: Install Cypress
+        run: |
+          npm install cypress@9.5.1
 
           
