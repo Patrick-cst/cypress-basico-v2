@@ -27,9 +27,6 @@ jobs:
       - name: Install Cypress
         run: npm install cypress@9.5.1
 
-      - name: Migrate Cypress Config
-        run: npx cypress open
-
       - name: Verify Cypress Version
         run: npx cypress verify
 
