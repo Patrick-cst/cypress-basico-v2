@@ -1,17 +1,30 @@
-name: End-to-end tests 🧪
-on: [push]
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  cypress-run:
-    runs-on: ubuntu-20.04
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with: 
-          cypress-version: 13.6.3
-      - name: Install Cypress
-        run: | 
-          npm install cypress@13.6.3
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Clear Node Modules Cache
+      run: rm -rf node_modules
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Cypress Tests
+      run: npx cypress run
+
+          
