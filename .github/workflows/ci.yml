@@ -10,4 +10,8 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
-        
+        with: 
+          cypress-version: 13.6.3
+      - name: Install Cypress
+        run: | 
+          npm install cypress@13.6.3
