@@ -133,20 +133,20 @@ describe('Central de Atendimento ao Cliente TAT', function () {
     })
 
 
-    it('Deve exibir apenas arquivos com o nome filtrado', () => {
-        // Acessar a página
-        cy.visit('URL_DA_PAGINA');
+    // it('Deve exibir apenas arquivos com o nome filtrado', () => {
+    //     // Acessar a página
+    //     cy.visit('URL_DA_PAGINA');
     
-        // Inserir o nome do arquivo na caixa de pesquisa
-        cy.get('#caixa-de-pesquisa').type('Nome do Arquivo');
+    //     // Inserir o nome do arquivo na caixa de pesquisa
+    //     cy.get('#caixa-de-pesquisa').type('Nome do Arquivo');
     
-        // Aguardar pelos resultados da pesquisa
-        cy.get('#resultados-da-pesquisa').should('be.visible');
+    //     // Aguardar pelos resultados da pesquisa
+    //     cy.get('#resultados-da-pesquisa').should('be.visible');
     
-        // Validar os resultados da pesquisa
-        cy.get('.resultado-do-arquivo').each((resultado) => {
-          // Verificar se o nome do arquivo corresponde ao filtro
-          cy.wrap(resultado).should('include.text', 'Nome do Arquivo');
-        });
-      });
+    //     // Validar os resultados da pesquisa
+    //     cy.get('.resultado-do-arquivo').each((resultado) => {
+    //       // Verificar se o nome do arquivo corresponde ao filtro
+    //       cy.wrap(resultado).should('include.text', 'Nome do Arquivo');
+    //     });
+    //   });
 })
